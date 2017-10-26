@@ -1,0 +1,25 @@
+pseudocode
+
+views
+  venue
+    - table
+    - handlebars escape
+  musician
+  
+tables/models
+  gig
+    -fields
+      -engagement type
+        - long term or short term
+      - genre
+      - solo artist or band
+      - date
+      - name of venue
+      - contact
+      - additional info
+  musician
+    - name
+    - number of members
+    - genre
+    - website
+    - contact

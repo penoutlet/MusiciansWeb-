@@ -1,0 +1,30 @@
+{
+  "name": "musiciansweb-",
+  "version": "1.0.0",
+  "description": "An app for artists to find venues and venues to find artists.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penoutlet/MusiciansWeb-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/penoutlet/MusiciansWeb-/issues"
+  },
+  "homepage": "https://github.com/penoutlet/MusiciansWeb-#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.4.2",
+    "path": "^0.12.7",
+    "sequelize": "^4.17.0"
+  }
+}

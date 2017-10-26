@@ -1,0 +1,58 @@
+<ul class="nav nav-tabs">
+	<li class="nav-item">
+		<a class="nav-link active" href="/">Shop</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="/managersignin">Manager</a>
+	</li>
+</ul>
+
+<form  id = 'add-form' class ="create-update-form" action = "/artist" method = 'POST'>
+	<div class = 'form-group'>
+		<label align='center' for = 'product'>    Product    </label>
+		<input type="text" class="form-control" placeholder="artist name" id = 'user' name = 'artist_name'>
+		<input type='text' class='form-control' placeholder='contact' id = 'user' name = 'contact'>
+		<input type='text' class='form-control' placeholder='website' id = 'user' name = 'website'>
+		<input type='text' class='form-control' placeholder='genre' id = 'user' name = 'genre'>
+		<input type='text' class='form-control' placeholder='group size' id = 'user' name = 'group_size'>
+		<input type='text' class='form-control' placeholder='blurb' id = 'user' name = 'blurb'>
+
+		<button type="submit" class="btn btn-warning" id = 'add-button'> Add Artist </button>
+
+
+		</div>
+	</form>
+<button id= 'show-table-button' class='btn btn-danger'> Edit database </button>
+		<table state='hidden' id ='manager-table' class="table table-striped">
+		    <thead>
+		      <tr>
+		        <th>Product Name</th>
+		        <th>Price</th>
+		        <th>Stock</th>
+						<th> Department </th>
+						<th> Seller </th>
+		      </tr>
+		    </thead>
+					{{#each product}}
+					<tbody>
+
+		      <tr>
+		        <td>{{product_name}}</td>
+		        <td>{{price}}</td>
+		        <td>{{stock_quantity}}</td>
+						<td>{{department}}</td>
+						<td>
+							<form action='/products/{{this.id}}?_method=DELETE' method='POST'>
+							<button type='submit'> Delete </button>
+						</form>
+						<form action='/products/{{this.id}}?_method=PUT' method='POST'>
+							<button type="submit" name="button"> Update </button>
+						</form>
+					</td>
+		      </tr>
+					</tbody>
+
+					{{/each}}
+		  </table>
+
+			<script href='./../js/js.js'> </script>

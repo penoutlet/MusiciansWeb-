@@ -1,0 +1,29 @@
+<ul class="nav nav-tabs">
+	 <a class="navbar-brand" href="/"> Musician's Web </a>
+	 <li class="nav-item">
+		<a class="nav-link active" href='/artist'>View Artists</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link active" href='/venue'>View Venues</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="/addartist">Add Venue</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="/addvenue">Add Artist</a>
+	</li>
+</ul>
+<form  id = 'add-form' class ="create-update-form" action = "/artist" method = 'POST'>
+	<div class = 'form-group'>
+		<input type="text" class="form-control" placeholder="artist name" id = 'user' name = 'artist_name'>
+		<input type='text' class='form-control' placeholder='contact' id = 'user' name = 'contact'>
+		<input type='text' class='form-control' placeholder='website' id = 'user' name = 'website'>
+		<input type='text' class='form-control' placeholder='genre' id = 'user' name = 'genre'>
+		<input type='text' class='form-control' placeholder='group size' id = 'user' name = 'group_size'>
+		<input type='text' class='form-control' placeholder='blurb' id = 'user' name = 'blurb'>
+
+		<button type="submit" class="btn btn-warning" id = 'add-button'> Add Venue </button>
+
+
+		</div>
+	</form>

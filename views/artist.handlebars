@@ -1,0 +1,55 @@
+<ul class="nav nav-tabs">
+	 <a class="navbar-brand" href="/"> Musician's Web </a>
+	 <li class="nav-item">
+		<a class="nav-link active" href='/artist'>View Artists</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link active" href='/venue'>View Venues</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="/addartist">Add Venue</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="/addvenue">Add Artist</a>
+	</li>
+</ul>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Artist's Name</th>
+				<th> Contact </th>
+        <th> Website</th>
+        <th> Genre </th>
+				<th> Group size </th>
+				<th> Blurb </th>
+				<th> </th>
+      </tr>
+    </thead>
+			<tbody>
+				{{#each artist}}
+
+      <tr>
+        <td>{{artist_name}}</td>
+				<td> <button class='btn btn-warning'> Buy </button>
+        <td> {{contact}} </td>
+        <td> {{website}} </td>
+				<td>{{genre}} </td>
+				<td> {{group_size}} </td>
+				<td> {{blurb}} </td>
+				<button class='btn btn-primary' id='book-button'> Send Email </button>
+      </tr>
+			{{/each}}
+			<tr>
+        <td>Green Day</td>
+        <td> greenday@billiejoe.com </td>
+        <td> www.greenday.com </td>
+				<td> Pop punk </td>
+				<td> 4 </td>
+				<td> We are loud, proud and ready to play </td>
+				<td> <button class='btn btn-primary' id='book-button'> Send Email </button></td>
+      </tr>
+			</tbody>
+
+
+  </table>
+</div>

@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser')
 var morgan = require('morgan');
 var path = require('path');
+var db = require('../models');
 module.exports = function(app) {
 // morgan
 
@@ -19,22 +20,49 @@ app.get('/', (req,res)=>{
 });
 
 app.get('/artist', (req,res)=>{
-  res.render('artist');
+  db.artist.findAll({}).then((artist)=>{
+    res.render('artistview',{artist});
+  })
 });
 
-app.get('/venue', (req,res)=>{
-  res.render('venue');
+app.get('/gigs', (req,res)=>{
+  db.gig.findAll({}).then((gig)=>{
+    res.render('gigview', {gig});
+  })
 });
 
 app.get('/addartist',(req,res)=>{
-  res.render('addartist');
+    res.render('addartist');
+
+});
+app.post('/artist',(req,res)=>{
+  db.artist.create(req.body).then((data)=>{
+    console.log('success'+JSON.stringify(data));
+    res.redirect('/artist');
+  });
 });
 
-app.get('/addvenue', (req,res)=>{
-  res.render('addvenue');
+
+app.get('/addgig', (req,res)=>{
+  res.render('addgig');
 });
 
+app.post('/gigs',(req,res)=>{
+    db.gig.create(req.body).then((data)=>{
+      console.log('data'+data);
+      res.redirect('/gigs');
+    });
+});
 app.get('/map',(req,res)=>{
   res.sendFile(__dirname, '../', 'map.html');
 })
 };
+
+app.get('/messages',(req,res)=>{
+  db.findAll({}).then((messages)=>{
+    res.json(messages);
+
+  })
+})
+
+// app.post('/messages',  )

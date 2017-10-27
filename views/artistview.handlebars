@@ -4,15 +4,16 @@
 		<a class="nav-link active" href='/artist'>View Artists</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link active" href='/venue'>View Venues</a>
+		<a class="nav-link active" href='/gigs'>View Gigs</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="/addartist">Add Venue</a>
+		<a class="nav-link" href="/addartist">Add Gig</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="/addvenue">Add Artist</a>
+		<a class="nav-link" href="/addgig">Add Artist</a>
 	</li>
 </ul>
+
 <table class="table table-striped">
     <thead>
       <tr>
@@ -30,13 +31,12 @@
 
       <tr>
         <td>{{artist_name}}</td>
-				<td> <button class='btn btn-warning'> Buy </button>
         <td> {{contact}} </td>
         <td> {{website}} </td>
 				<td>{{genre}} </td>
 				<td> {{group_size}} </td>
 				<td> {{blurb}} </td>
-				<button class='btn btn-primary' id='book-button'> Send Email </button>
+				<!-- <button class='btn btn-primary' id='book-button'> Send Email </button> -->
       </tr>
 			{{/each}}
 			<tr>
@@ -46,7 +46,7 @@
 				<td> Pop punk </td>
 				<td> 4 </td>
 				<td> We are loud, proud and ready to play </td>
-				<td> <button class='btn btn-primary' id='book-button'> Send Email </button></td>
+				<!-- <td> <button class='btn btn-primary' id='book-button'> Send Email </button></td> -->
       </tr>
 			</tbody>
 

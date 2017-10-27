@@ -1,0 +1,96 @@
+	<ul class="nav nav-tabs">
+		 <a class="navbar-brand" href="/"> Musician's Web </a>
+		 <li class="nav-item">
+ 			<a class="nav-link active" href='/artist'>View Artists</a>
+ 		</li>
+		<li class="nav-item">
+			<a class="nav-link active" href='/gigs'>View Gigs</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/addartist">Add Gig</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/addgig">Add Artist</a>
+		</li>
+</ul>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Venue's Name</th>
+				<th> Contact </th>
+        <th> Website</th>
+        <th> Duration </th>
+				<th> Blurb </th>
+				<th> </th>
+
+      </tr>
+    </thead>
+			<tbody>
+				{{#each gig}}
+
+      <tr>
+        <td>{{venue_name}}</td>
+        <td> {{contact}} </td>
+        <td> {{website}} </td>
+				<td>{{duration}} </td>
+				<td> {{blurb}} </td>
+				<td><a <button class="btn btn-warning btn-lg" id = 'see-map-button'> See Map </button></a></td>
+				<td><a href='/contact'> <button class="btn btn-warning btn-lg" id = 'see-map-button'> Contact </button></a></td>
+
+			</tr>
+			{{/each}}
+			
+				<input type="text" id="autocomplete">
+
+				<!-- Modal -->
+				<div id="myModal" class="modal fade" role="dialog">
+				  <div class="modal-dialog">
+
+				    <!-- Modal content-->
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				        <h4 class="modal-title">Map</h4>
+				      </div>
+							<input type="text" id="autocomplete">
+							<div id="map"></div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				      </div>
+				    </div>
+
+				  </div>
+				</div>
+
+			      </tr>
+
+			</tbody>
+
+
+  </table>
+</div>
+
+<style>
+		 #map {
+			height: 400px;
+			width: 100%;
+		 }
+	</style>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDCTwL9mpBMslfLdyW7_AxKxgnW4IzENc&callback=initMap">
+	</script>
+		<script>
+							function initMap(){
+
+								var uluru = {lat: -25.363, lng: 131.044};
+								var map = new google.maps.Map(document.getElementById('map'), {
+									zoom: 4,
+									center: uluru
+								});
+								var marker = new google.maps.Marker({
+									position: uluru,
+									map: map
+								});
+					}
+				</script>

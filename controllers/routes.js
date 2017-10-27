@@ -4,6 +4,7 @@ var bodyParser = require('body-parser')
 var morgan = require('morgan');
 var path = require('path');
 var db = require('../models');
+
 module.exports = function(app) {
 // morgan
 
@@ -53,15 +54,20 @@ app.post('/gigs',(req,res)=>{
       res.redirect('/gigs');
     });
 });
+
 app.get('/map',(req,res)=>{
   res.sendFile(__dirname, '../', 'map.html');
 })
-};
+
 
 app.get('/messages',(req,res)=>{
-  db.findAll({}).then((messages)=>{
+  db.message.findAll({}).then((messages)=>{
+  if (messages){
     res.json(messages);
-
+  }
+  else{
+    res.send('No messages found.')
+  }
   })
 })
 
@@ -72,3 +78,5 @@ app.post('/messages',(req,res)=>{
   })
   // res.send('message sent. Redirecting...');
 })
+// end of  module.exports
+};

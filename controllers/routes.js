@@ -65,4 +65,10 @@ app.get('/messages',(req,res)=>{
   })
 })
 
-// app.post('/messages',  )
+app.post('/messages',(req,res)=>{
+  db.message.create(req.body).then((data)=>{
+    console.log('Message successfully posted');
+    res.redirect('/messages');
+  })
+  // res.send('message sent. Redirecting...');
+})
